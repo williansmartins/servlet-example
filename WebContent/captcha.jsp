@@ -8,30 +8,20 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Trabalho de Framework</title>
-
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/custom.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <title>Trabalho de Framework</title>
   </head>
 
   <body>
-
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -56,21 +46,25 @@
     </div>
 
     <div class="container">
-    	<div class="page-header">
-		  <h1>Apresentação do chaptcha</h1>
-		</div>
-		<div class="jumbotron">
-			<h1>Digite o texto abaixo!</h1>
-			<p>...</p>
-			<p><a class="btn btn-primary btn-lg" role="button">Testar</a></p>
-		</div>
-
+    	<form action="autenticar" method="post">
+	    	<div class="page-header">
+			  <h1>Apresentação do chaptcha</h1>
+			</div>
+			<div class="jumbotron">
+				Login: <input type="text" name="login" /> <br />
+				Senha: <input type="password" name="senha" /> <br />
+				<br />
+				<br />
+				Favor preencher o campo abaixo com os caracteres escritos na imagem.<br />
+				<img src="jcaptcha.jpg"/>
+				<input type="text" name="jcaptcha" value=""/>
+				<p>
+					<input class="btn btn-primary btn-lg" type="submit" role="button" value="Logar"/>
+				</p>
+			</div>
+    	</form>
     </div><!-- /.container -->
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>

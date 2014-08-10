@@ -1,0 +1,44 @@
+# Compilados 
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+
+# Folders
+target/
+
+
+# Extras
+projeto/build.xml
+projeto/build/
+projeto/src/META-INF/persistence.xml
+
+
+/target
+/target/*
+/target/classes
+/target/.class
+/.classpath
+/.project
+/.settings
+/.settings/*
+/.surefire
+/bin
+/.class
+/bin/*
+/classes
+/classes/*
+/.android
+/.android/*
+/.netbeans
+/.netbeans/*
+/AppData
+/AppData/*
+/Desktop
+/Desktop/*
+/.metadata
+/.metadata/*
+/build/  
