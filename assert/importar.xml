@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+	<report>
+	    <dados>
+	        <arquivo>
+	            <cliente>
+	                <cidade>São Paulo</cidade>
+	                <cnpj>11.222.333/4444-55</cnpj>
+	                <codigo>1</codigo>
+	                <endereco>Rua Visconde de Taunai</endereco>
+	                <estado>SP</estado>
+	                <nome>Yazigi</nome>
+	            </cliente>
+	            <nfss>
+	                <nfs>
+	                    <data>2014-07-27T14:08:32.427-03:00</data>
+	                    <discriminacaoGeral>Mouse</discriminacaoGeral>
+	                    <numero>1</numero>
+	                    <valor>50</valor>
+	                </nfs>
+	                <nfs>
+	                    <data>2014-07-27T14:08:32.428-03:00</data>
+	                    <discriminacaoGeral>Monitor</discriminacaoGeral>
+	                    <numero>2</numero>
+	                    <valor>400</valor>
+	                </nfs>
+	                <nfs>
+	                    <data>2014-07-27T14:08:32.428-03:00</data>
+	                    <discriminacaoGeral>Processador</discriminacaoGeral>
+	                    <numero>3</numero>
+	                    <valor>800.509999999999990905052982270717620849609375</valor>
+	                </nfs>
+	            </nfss>
+	        </arquivo>
+	    </dados>
+	</report>
