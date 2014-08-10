@@ -1,0 +1,7 @@
+Quando start o projeto, basta efetuar o login com:
+Login: admin
+Senha: admin
+
+Depois insira o codigo captcha de acordo com a image, e sera direcionado para
+a pagina que gerar o relatorio. Insira o nome do relatorio.
+O arquivo PDF serar criado da pasta /relatorio/ do proprio projeto.
