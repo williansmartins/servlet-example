@@ -21,6 +21,15 @@
 		<url-pattern>/jcaptcha.jpg</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>importarXML</servlet-name>
+		<servlet-class>br.com.fiap.framework.ImportarXML</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>importarXML</servlet-name>
+		<url-pattern>/importarXML</url-pattern>
+	</servlet-mapping>
+	
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>index.html</welcome-file>
