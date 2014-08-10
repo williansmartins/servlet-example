@@ -45,7 +45,7 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Captcha</a></li>
+            <li class="active"><a href="captcha.html">Captcha</a></li>
             <li><a href="#about">Gerar Boletos</a></li>
             <li><a href="#contact">Imprimir Boletos</a></li>
             <li><a href="#contact">Quartz</a></li>
@@ -56,11 +56,14 @@
     </div>
 
     <div class="container">
-
-      <div class="starter-template">
-        <h1>Desenvolvimento do trabalho de Framework</h1>
-        <p class="lead">Este trabalho apresenta as ferramentas aprendidas na matéria de frameworks.</p>
-      </div>
+    	<div class="page-header">
+		  <h1>Apresentação do chaptcha</h1>
+		</div>
+		<div class="jumbotron">
+			<h1>Digite o texto abaixo!</h1>
+			<p>...</p>
+			<p><a class="btn btn-primary btn-lg" role="button">Testar</a></p>
+		</div>
 
     </div><!-- /.container -->
 
