@@ -42,3 +42,4 @@ projeto/src/META-INF/persistence.xml
 /.metadata
 /.metadata/*
 /build/  
+*.DS_Store
