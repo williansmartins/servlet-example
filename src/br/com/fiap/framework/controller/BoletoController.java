@@ -87,7 +87,7 @@ public class BoletoController {
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("dataatual", new Date());
 			JRXmlDataSource jrxmlds = new JRXmlDataSource(bais, CAMINHOXPATH);
-			JasperReport jasperReport = JasperCompileManager.compileReport(CAMINHOJASPER + "/Boleto.jrxml");
+			JasperReport jasperReport = JasperCompileManager.compileReport(raizDeContexto + "/Boleto.jrxml");
 			JasperPrint print = JasperFillManager.fillReport(jasperReport, map, jrxmlds);
 			exporter = new JRPdfExporter();
 			exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, (raizDeContexto + ARQUIVODESTINOPDF + nomeRelatorio + ".pdf"));
