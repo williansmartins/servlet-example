@@ -156,7 +156,7 @@ abstract class GenericDAO<T> implements Serializable {
 
 	public static EntityManagerFactory getEmf()  {
 		if (emf == null) {
-			setEmf(Persistence.createEntityManagerFactory("AeroportoPU"));
+			setEmf(Persistence.createEntityManagerFactory("fiapframework"));
 		}
 		return emf;
 	}

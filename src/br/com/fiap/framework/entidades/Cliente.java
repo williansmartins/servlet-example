@@ -1,12 +1,19 @@
 package br.com.fiap.framework.entidades;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -40,6 +47,14 @@ public class Cliente implements Serializable {
 	@Column(name="cnpj")
 	private String cnpj;
 	
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(name = "TBL_CLIENTE_NOTA_FISCAL_SERVICO", joinColumns = @JoinColumn(name = "CLIENTE_ID"), inverseJoinColumns = @JoinColumn(name = "NFS_ID"))
+	private List<NotaFiscalServico> notas;
+	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name = "TBL_CLIENTE_BOLETO", joinColumns = @JoinColumn(name = "CLIENTE_ID"), inverseJoinColumns = @JoinColumn(name = "BOLETO_ID"))
+	private List<Boleto> boletos;
+
 	public Cliente(){}
 	public Cliente(String nome, String cnpj){
 		this.nome = nome;
@@ -115,6 +130,28 @@ public class Cliente implements Serializable {
 		this.cnpj = cnpj;
 	}
 	
+	public List<NotaFiscalServico> getNotas() {
+		if (notas == null) {
+			notas = new ArrayList<NotaFiscalServico>();
+		}
+		return notas;
+	}
+	
+	public void setNotas(List<NotaFiscalServico> notas) {
+		this.notas = notas;
+	}
+	
+	public List<Boleto> getBoletos() {
+		if (boletos == null) {
+			boletos = new ArrayList<Boleto>();
+		}
+		return boletos;
+	}
+	
+	public void setBoletos(List<Boleto> boletos) {
+		this.boletos = boletos;
+	}
+	
 	@Override
 	public String toString() {
 		return "Cliente [codigo=" + codigo + ", nome=" + nome + ", endereco=" + endereco + ", cidade=" + cidade + ", estado=" + estado + ", cnpj=" + cnpj + "]";
@@ -143,6 +180,56 @@ public class Cliente implements Serializable {
 		} else if (!codigo.equals(other.codigo))
 			return false;
 		return true;
+	}
+
+	public Cliente comCodigo(Long codigo) {
+		this.codigo = codigo;
+		return this;
+	}
+	
+	public Cliente comNome(String nome) {
+		this.nome = nome;
+		return this;
+	}
+	
+	public Cliente comEndereco(String endereco) {
+		this.endereco = endereco;
+		return this;
+	}
+	
+	public Cliente comCidade(String cidade) {
+		this.cidade = cidade;
+		return this;
+	}
+	
+	public Cliente comEstado(String estado) {
+		this.estado = estado;
+		return this;
+	}
+	
+	public Cliente comCnpj(String cnpj) {
+		this.cnpj = cnpj;
+		return this;
+	}
+	
+	public Cliente comNotaFiscalServico(NotaFiscalServico nota){
+		getNotas().add(nota);
+		return this;
+	}
+
+	public Cliente comNotas(List<NotaFiscalServico> notas) {
+		this.notas = notas;
+		return this;
+	}
+	
+	public Cliente comBoletos(List<Boleto> boletos) {
+		this.boletos = boletos;
+		return this;
+	}
+	
+	public Cliente comBoleto(Boleto boleto){
+		getBoletos().add(boleto);
+		return this;
 	}
 	
 	public Cliente create(ClienteVO vo){

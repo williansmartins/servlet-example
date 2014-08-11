@@ -12,6 +12,7 @@ import br.com.fiap.framework.entidades.Cliente;
 import br.com.fiap.framework.entidades.ClienteVO;
 import br.com.fiap.framework.entidades.NotaFiscalServico;
 import br.com.fiap.framework.entidades.NotaFiscalServicoVO;
+import br.com.fiap.framework.entidades.Relatorio;
 import br.com.fiap.framework.entidades.Report;
 
 public class ConversorEntidadeXML {
@@ -56,6 +57,15 @@ public class ConversorEntidadeXML {
 		StringWriter sw = new StringWriter();
 		JAXBContext jaxbContext = JAXBContext.newInstance(Report.class);
 		Marshaller marshaller = jaxbContext.createMarshaller();
+		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+		marshaller.marshal(relatorio, sw);
+		return sw.toString();
+	}
+	
+	public String gerarXML(Relatorio relatorio) throws JAXBException {
+		StringWriter sw = new StringWriter();
+		JAXBContext context = JAXBContext.newInstance(Relatorio.class);
+		Marshaller marshaller = context.createMarshaller();
 		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 		marshaller.marshal(relatorio, sw);
 		return sw.toString();

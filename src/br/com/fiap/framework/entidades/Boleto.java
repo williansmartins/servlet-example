@@ -14,14 +14,17 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity(name="boleto")
+@Table(name="TBL_BOLETO")
 @XmlRootElement(name="boleto")
-@Table(name="TBL_NOTA_FISCAL_SERVICO")
 public class Boleto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column(name="codigo_barra", nullable=false)
 	private String codigoBarra;
 	
 	@Column(name="nome_banco", nullable=false)
@@ -58,6 +61,14 @@ public class Boleto implements Serializable {
 		this.valorDocumento = valorDocumento;
 		this.multa = multa;
 		this.valorCobrado = valorCobrado;
+	}
+	
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	@XmlElement
@@ -159,6 +170,46 @@ public class Boleto implements Serializable {
 		} else if (!codigoBarra.equals(other.codigoBarra))
 			return false;
 		return true;
+	}
+
+	public Boleto comCodigoBarra(String codigoBarra) {
+		this.codigoBarra = codigoBarra;
+		return this;
+	}
+
+	public Boleto comNomeBanco(String nomeBanco) {
+		this.nomeBanco = nomeBanco;
+		return this;
+	}
+
+	public Boleto comObservacao(String observacao) {
+		this.observacao = observacao;
+		return this;
+	}
+
+	public Boleto comDataDocumento(Calendar dataDocumento) {
+		this.dataDocumento = dataDocumento;
+		return this;
+	}
+
+	public Boleto comDataVencimento(Calendar dataVencimento) {
+		this.dataVencimento = dataVencimento;
+		return this;
+	}
+
+	public Boleto comValorDocumento(BigDecimal valorDocumento) {
+		this.valorDocumento = valorDocumento;
+		return this;
+	}
+
+	public Boleto comMulta(BigDecimal multa) {
+		this.multa = multa;
+		return this;
+	}
+	
+	public Boleto comValorCobrado(BigDecimal valorCobrado) {
+		this.valorCobrado = valorCobrado;
+		return this;
 	}
 	
 	public BoletoVO create(Boleto boleto){

@@ -26,6 +26,11 @@ public class Dados {
 		this.arquivo = arquivo;
 		return this;
 	}
+	
+	public Dados comArquivo(Arquivo arquivo) {
+		this.arquivo = arquivo;
+		return this;	
+	}
 
 	@Override
 	public String toString() {

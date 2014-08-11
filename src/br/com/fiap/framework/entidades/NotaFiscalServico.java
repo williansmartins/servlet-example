@@ -50,6 +50,26 @@ public class NotaFiscalServico implements Serializable {
 		this.valor = valor;
 	}
 	
+	public NotaFiscalServico comNumero(Long numero) {
+		this.numero = numero;
+		return this;
+	}
+
+	public NotaFiscalServico comDiscriminacaoGeral(String discriminacaoGeral) {
+		this.discriminacaoGeral = discriminacaoGeral;
+		return this;
+	}
+
+	public NotaFiscalServico comData(Calendar data) {
+		this.data = data;
+		return this;
+	}
+
+	public NotaFiscalServico comValor(BigDecimal valor) {
+		this.valor = valor;
+		return this;
+	}
+	
 	public Long getId() {
 		return id;
 	}

@@ -8,6 +8,7 @@ public class Arquivo {
 
 	private Cliente cliente;
 	private NotasFiscaisServico nfss;
+	private Boleto	boleto;
 	
 	public Arquivo(){}
 	public Arquivo(Cliente cliente){
@@ -44,6 +45,11 @@ public class Arquivo {
 		return this;
 	}
 	
+	public Arquivo comCliente(Cliente cliente) {
+		this.cliente = cliente;
+		return this;
+	}
+	
 	public Arquivo nfss(NotasFiscaisServico nfss) {
 		this.nfss = nfss;
 		return this;
@@ -51,6 +57,20 @@ public class Arquivo {
 
 	public Arquivo addNotaFiscalServico(NotaFiscalServico nfs){
 		this.getNfss().addNotaFiscalServico(nfs);
+		return this;
+	}
+	
+	public Arquivo comNotasFiscaisServico(NotasFiscaisServico notasFiscaisServico) {
+		this.nfss = notasFiscaisServico;
+		return this;
+	}
+	
+	public Boleto getBoleto() {
+		return boleto;
+	}
+	
+	public Arquivo comBoleto(Boleto boleto) {
+		this.boleto = boleto;
 		return this;
 	}
 

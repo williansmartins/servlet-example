@@ -22,6 +22,11 @@ public class NotasFiscaisServico {
 		return nfs;
 	}
 
+	public NotasFiscaisServico comNota(List<NotaFiscalServico> nfs) {
+		this.nfs = nfs;
+		return this;
+	}
+	
 	@XmlElement
 	public List<NotaFiscalServico> getNfs() {
 		return nfs;
