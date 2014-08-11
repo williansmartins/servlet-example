@@ -15,3 +15,7 @@ qualquer outro com o mesmo padrão. Basta selecionar o conteúdo e colar dentro 
 texto da pagina de importação. Com isso os dados do xml serão importados para o 
 banco de dados.
 
+Gerar Boleto:
+Quando acessar a pagina de geração de boleto, bastar inserir o nome do boleto e 
+clicar em gerar, o boleto será criado no servidor da aplicação.
+

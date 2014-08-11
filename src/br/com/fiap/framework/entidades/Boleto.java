@@ -15,7 +15,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity(name="boleto")
 @XmlRootElement(name="boleto")
-@SuppressWarnings("restriction")
 @Table(name="TBL_NOTA_FISCAL_SERVICO")
 public class Boleto implements Serializable {
 

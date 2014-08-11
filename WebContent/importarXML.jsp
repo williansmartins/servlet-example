@@ -35,8 +35,9 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="captcha.html">Captcha</a></li>
-            <li><a href="#about">Gerar Boletos</a></li>
+            <li><a href="captcha.jsp">Captcha</a></li>
+            <li><a href="importarXML.jsp">Importar XML</a></li>
+            <li><a href="gerarBoletos.jsp">Gerar Boletos</a></li>
             <li><a href="#contact">Imprimir Boletos</a></li>
             <li><a href="#contact">Quartz</a></li>
             <li><a href="#contact">Service</a></li>
@@ -48,15 +49,21 @@
     <div class="container">
     	<form action="importarXML" method="post">
 	    	<div class="page-header">
-			  <h1>Apresenta��o do chaptcha</h1>
+			  <h1>Apresentação do chaptcha</h1>
 			</div>
 			<div class="jumbotron">
 				<p>
-					Copie e cole o xml abaixo: <input type="text" name="nome" value="nome do arquivo"/>
-					<br />
-					<br />
-					<textarea id="xml" name="xml" rows="15" cols="150"></textarea>
+					Copie e cole o xml abaixo:
 				</p>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Nome XML</span>
+					<input type="text" class="form-control" name="nome" placeholder="Nome do Arquivo" />
+				</div>
+				
+				<div class="input-group">
+					<textarea class=”form-control” id="xml" name="xml" rows="15" cols="150"></textarea>
+				</div>
 				
 				<p>
 					<input class="btn btn-primary btn-lg" type="submit" role="button" value="Gravar"/>
