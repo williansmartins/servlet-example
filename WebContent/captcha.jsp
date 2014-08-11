@@ -31,12 +31,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Frameworks</a>
+          <a class="navbar-brand" href="index.html">Frameworks</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="captcha.html">Captcha</a></li>
-            <li><a href="#about">Gerar Boletos</a></li>
+            <li><a href="captcha.jsp">Captcha</a></li>
+            <li><a href="importarXML.jsp">Importar XML</a></li>
+            <li><a href="gerarBoletos.jsp">Gerar Boletos</a></li>
             <li><a href="#contact">Imprimir Boletos</a></li>
             <li><a href="#contact">Quartz</a></li>
             <li><a href="#contact">Service</a></li>
@@ -51,13 +52,25 @@
 			  <h1>Apresentação do chaptcha</h1>
 			</div>
 			<div class="jumbotron">
-				Login: <input type="text" name="login" /> <br />
-				Senha: <input type="password" name="senha" /> <br />
-				<br />
-				<br />
-				Favor preencher o campo abaixo com os caracteres escritos na imagem.<br />
-				<img src="jcaptcha.jpg"/>
-				<input type="text" name="jcaptcha" value=""/>
+				<div class="input-group">
+					<span class="input-group-addon">Login</span>
+					<input type="text" class="form-control" name="login" placeholder="Login" />
+				</div>
+				
+				<div class="input-group">
+					<span class="input-group-addon">Senha</span>
+					<input type="text" class="form-control" name="senha" placeholder="Senha" />
+				</div>
+				
+				<p class="navbar-text navbar-right">
+					Favor preencher o campo abaixo com os caracteres escritos na imagem.
+				</p>
+				
+				<p class="navbar-text navbar-right">
+					<img src="jcaptcha.jpg"/>
+					<input type="text" class="form-control" name="jcaptcha" placeholder="Captcha" />
+				</p>
+				
 				<p>
 					<input class="btn btn-primary btn-lg" type="submit" role="button" value="Logar"/>
 				</p>

@@ -19,7 +19,7 @@ public class BoletoController {
 
 	private final String CAMINHOXPATH = "/report/data/file/cliente";
 	private final String ARQUIVODESTINOPDF = "relatorios/";
-	private final String CAMINHOJASPER= "/home/alberto";//TODO: Alterar de acordo com o caminho do arquivo na maquina.
+	private final String CAMINHOJASPER= "/home/alberto/git/servlet-example/WebContent";//TODO: Alterar de acordo com o caminho do arquivo na maquina.
 	private final String XML = "<?xml version=\"1.0\" encoding=\"iso-8859-1\" ?>\n"+ 
 					"<report>\n"+
 					"\n"+

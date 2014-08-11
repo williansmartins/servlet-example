@@ -15,7 +15,6 @@ import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@SuppressWarnings("restriction")
 @Entity(name="NotaFiscalServico")
 @Table(name="TBL_NOTA_FISCAL_SERVICO")
 @XmlRootElement(name="notaFiscalServico")

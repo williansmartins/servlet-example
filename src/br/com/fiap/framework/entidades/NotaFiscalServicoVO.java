@@ -7,7 +7,6 @@ import java.util.Calendar;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@SuppressWarnings("restriction")
 @XmlRootElement(name="notaFiscalServico")
 public class NotaFiscalServicoVO implements Serializable {
 

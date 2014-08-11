@@ -14,7 +14,6 @@ import br.com.fiap.framework.entidades.NotaFiscalServico;
 import br.com.fiap.framework.entidades.NotaFiscalServicoVO;
 import br.com.fiap.framework.entidades.Report;
 
-@SuppressWarnings("restriction")
 public class ConversorEntidadeXML {
 
 	public String gerarXML(ClienteVO vo) throws JAXBException {

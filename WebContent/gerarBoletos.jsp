@@ -51,9 +51,11 @@
 			  <h1>Gerar Boleto</h1>
 			</div>
 			<div class="jumbotron">
-				Código do Boleto: <input type="text" name="nomeBoleto" /> <br />
-				<br />
-				<br />
+				<div class="input-group">
+					<span class="input-group-addon">Código do Boleto</span>
+					<input type="text" class="form-control" name="nomeBoleto" placeholder="Código do Boleto" />
+				</div>
+				
 				<p>
 					<input class="btn btn-primary btn-lg" type="submit" role="button" value="Gerar"/>
 				</p>
