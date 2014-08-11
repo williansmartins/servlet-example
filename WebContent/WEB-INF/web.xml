@@ -13,6 +13,15 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>gerarBoleto</servlet-name>
+		<servlet-class>br.com.fiap.framework.GerarBoleto</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>gerarBoleto</servlet-name>
+		<url-pattern>/gerarBoleto</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>jcaptcha</servlet-name>
 		<servlet-class>br.com.fiap.framework.LoginCaptcha</servlet-class>
 	</servlet>

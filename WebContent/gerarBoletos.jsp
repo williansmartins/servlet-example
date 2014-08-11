@@ -17,8 +17,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <title>Trabalho de Framework</title>
+    
+    <title>Gerar Boleto</title>
   </head>
 
   <body>
@@ -35,8 +35,7 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="captcha.jsp">Captcha</a></li>
-            <li class="active"><a href="importarXML.jsp">Importar XML</a></li>
+            <li class="active"><a href="captcha.html">Captcha</a></li>
             <li><a href="#about">Gerar Boletos</a></li>
             <li><a href="#contact">Imprimir Boletos</a></li>
             <li><a href="#contact">Quartz</a></li>
@@ -47,21 +46,19 @@
     </div>
 
     <div class="container">
-    	<div class="page-header">
-		  <h1>Trabalho de Framework</h1>
-		</div>
-		<div class="jumbotron">
-			<h2>Este trabalho apresenta as ferramentas aprendidas na mat√©ria de frameworks</h2>
-			<p>...</p>
-			<p>
-				<a class="btn btn-primary btn-lg" role="button" href="gerarBoletos.jsp">Gerar Boletos</a>
-				<a class="btn btn-primary btn-lg" role="button" href="importarXML.jsp">Importar XML</a>
-				<a class="btn btn-primary btn-lg" role="button">Imprimir Boletos</a>
-				<a class="btn btn-primary btn-lg" role="button">Quartz</a>
-				<a class="btn btn-primary btn-lg" role="button">Service</a>
-				<a class="btn btn-primary btn-lg" role="button" href="captcha.jsp">Captcha</a>
-			</p>
-		</div>
+    	<form action="gerarBoleto" method="post">
+	    	<div class="page-header">
+			  <h1>Gerar Boleto</h1>
+			</div>
+			<div class="jumbotron">
+				CÛdigo do Boleto: <input type="text" name="nomeBoleto" /> <br />
+				<br />
+				<br />
+				<p>
+					<input class="btn btn-primary btn-lg" type="submit" role="button" value="Gerar"/>
+				</p>
+			</div>
+    	</form>
     </div><!-- /.container -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

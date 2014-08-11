@@ -1,7 +1,17 @@
-Quando start o projeto, basta efetuar o login com:
+Quando start o projeto, você estara no menu do sistema.
+Todas as funcionalidade do projeto estão listada nesta pagina:
+
+Login:
+Basta efetuar o login com:
 Login: admin
 Senha: admin
-
 Depois insira o codigo captcha de acordo com a image, e sera direcionado para
 a pagina que gerar o relatorio. Insira o nome do relatorio.
 O arquivo PDF serar criado da pasta /relatorio/ do proprio projeto.
+
+Importar XML:
+Dentro da pasta assert existe um xml de exemplo, o usuário pode usa-lo ou pode ser
+qualquer outro com o mesmo padrão. Basta selecionar o conteúdo e colar dentro do campo
+texto da pagina de importação. Com isso os dados do xml serão importados para o 
+banco de dados.
+
