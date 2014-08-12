@@ -56,15 +56,35 @@
 					<span class="input-group-addon">Nome do Cliente</span>
 					<input type="text" class="form-control" name="nomeCliente" placeholder="Nome Cliente" />
 				</div>
-				
+				<br />
 				<p>
-					<input class="btn btn-primary btn-lg" type="submit" role="button" value="Buscar"/>
+					<a class="btn btn-primary btn-lg buscar" href="#" >Buscar</a>
 				</p>
 			</div>
     	</form>
+    	<div class="panel panel-default">
+		  <div class="panel-heading">Resultados da busca</div>
+		  <div class="panel-body" id="result">
+		    
+		  </div>
+		</div>
+
     </div><!-- /.container -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    	$(function() {
+    		$( ".buscar" ).click(function() {
+   			 	$.ajax({
+   			   	  url: "clientes?nomeCliente=willians",
+   			   	}).done(function( result ) {
+   			   	  $("#result").html(result);
+   			   	});
+    		});
+    		
+    		
+    	});    
+    </script>
   </body>
 </html>

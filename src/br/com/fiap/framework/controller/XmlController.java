@@ -13,7 +13,7 @@ public class XmlController {
 		try {
 			Report report = (new ConversorEntidadeXML()).getRelatorio(xml);
 			Cliente cliente = report.getDados().getArquivo().getCliente();
-			Collection<NotaFiscalServico> nfss = report.getDados().getArquivo().getNfss().getNotaFiscalServico();
+			Collection<NotaFiscalServico> nfss = report.getDados().getArquivo().getNotasFiscaisServico().getNotaFiscalServico();
 			(new NotaFiscalServicoDAO()).insert(cliente, nfss);
 			return true;
 		} catch (Exception e) {

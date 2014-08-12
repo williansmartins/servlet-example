@@ -9,45 +9,45 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class NotasFiscaisServico {
 
-	private List<NotaFiscalServico> nfs;
+	private List<NotaFiscalServico> nota;
 	
 	public NotasFiscaisServico(){
-		nfs = new ArrayList<NotaFiscalServico>();
+		nota = new ArrayList<NotaFiscalServico>();
 	}
 	
 	public List<NotaFiscalServico> getNotaFiscalServico() {
-		if(this.nfs == null){
-			this.nfs = new ArrayList<NotaFiscalServico>();
+		if(this.nota == null){
+			this.nota = new ArrayList<NotaFiscalServico>();
 		}
-		return nfs;
+		return nota;
 	}
 
-	public NotasFiscaisServico comNota(List<NotaFiscalServico> nfs) {
-		this.nfs = nfs;
+	public NotasFiscaisServico comNota(List<NotaFiscalServico> nota) {
+		this.nota = nota;
 		return this;
 	}
 	
 	@XmlElement
-	public List<NotaFiscalServico> getNfs() {
-		return nfs;
+	public List<NotaFiscalServico> getNota() {
+		return nota;
 	}
 
-	public void setNfs(List<NotaFiscalServico> nfs) {
-		this.nfs = nfs;
+	public void setNota(List<NotaFiscalServico> nota) {
+		this.nota = nota;
 	}
 
-	public NotasFiscaisServico notasFiscaisServico(List<NotaFiscalServico> nfs) {
-		this.nfs = nfs;
+	public NotasFiscaisServico notasFiscaisServico(List<NotaFiscalServico> nota) {
+		this.nota = nota;
 		return this;
 	}
 
-	public NotasFiscaisServico addNotaFiscalServico(NotaFiscalServico nfs){
-		this.getNotaFiscalServico().add(nfs);
+	public NotasFiscaisServico addNotaFiscalServico(NotaFiscalServico nota){
+		this.getNotaFiscalServico().add(nota);
 		return this;
 	}
 
 	@Override
 	public String toString() {
-		return "NotasFiscaisServico [nfs=" + nfs + "]";
+		return "NotasFiscaisServico [nota=" + nota + "]";
 	}
 }

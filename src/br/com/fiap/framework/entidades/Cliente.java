@@ -43,7 +43,7 @@ public class Cliente implements Serializable {
 	
 	@Column(name="estado")
 	private String estado;
-	
+
 	@Column(name="cnpj")
 	private String cnpj;
 	

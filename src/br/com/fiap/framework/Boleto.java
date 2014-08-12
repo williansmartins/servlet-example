@@ -25,7 +25,27 @@ public class Boleto extends HttpServlet {
         super();
     }
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	String boleto = getBoleto(request, response);
+    	
+    	if (boleto != null) {
+			response.getWriter().write("<html><body><br/>Boleto Gerado com sucesso! <a href='" + boleto + "' target='_blank'>Visualizar.</a></body></html>");
+		} else {
+			response.getWriter().write("<html><body><br/>Boleto Falhou! <a href='gerarBoletos.jsp'>Tente novamente.</a></body></html>");
+		}
+    }
+    
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	String boleto = getBoleto(request, response);
+    	
+    	if (boleto != null) {
+			response.getWriter().write("<html><body><br/>Boleto Gerado com sucesso! <a href='" + boleto + "' target='_blank'>Visualizar.</a></body></html>");
+		} else {
+			response.getWriter().write("<html><body><br/>Boleto Falhou! <a href='gerarBoletos.jsp'>Tente novamente.</a></body></html>");
+		}
+    }
+    
+	private String getBoleto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String idCliente = request.getParameter("idCliente");
 		
 		Cliente c = (new ClienteController()).findById(new Long(idCliente));
@@ -42,14 +62,10 @@ public class Boleto extends HttpServlet {
 			String xml = (new ConversorEntidadeXML()).gerarXML(relatorio);
 			System.out.println(xml);
 			
-			String boleto = (new BoletoController()).gerarRelatorioPDF(("Relatorio_" + c.getNome().trim()), request.getRealPath("/"), xml);
-			if (boleto != null) {
-				response.getWriter().write("<html><body><br/>Boleto Gerado com sucesso! <a href='" + boleto + "' target='_blank'>Visualizar.</a></body></html>");
-			} else {
-				response.getWriter().write("<html><body><br/>Boleto Falhou! <a href='gerarBoletos.jsp'>Tente novamente.</a></body></html>");
-			}
+			return (new BoletoController()).gerarRelatorioPDF(("Relatorio_" + c.getNome().trim()), request.getRealPath("/"), xml);
 		} catch (JAXBException e) {
 			e.printStackTrace();
+			return null;
 		}
 	}
 }
