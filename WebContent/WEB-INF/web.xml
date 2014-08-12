@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.4">
-	
+<web-app xmlns:javaee="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.4">
 	<javaee:display-name>Framework Gerador de Boletos</javaee:display-name>
-	
 	<servlet>
 		<servlet-name>autenticar</servlet-name>
 		<servlet-class>br.com.fiap.framework.Autenticar</servlet-class>
@@ -37,6 +36,15 @@
 	<servlet-mapping>
 		<servlet-name>importarXML</servlet-name>
 		<url-pattern>/importarXML</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>clientes</servlet-name>
+		<servlet-class>br.com.fiap.framework.Clientes</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>clientes</servlet-name>
+		<url-pattern>/clientes</url-pattern>
 	</servlet-mapping>
 	
 	<welcome-file-list>

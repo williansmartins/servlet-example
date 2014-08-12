@@ -20,7 +20,7 @@ public class GerarBoleto extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nomeBoleto = request.getParameter("nomeBoleto");
 		
-		String boleto = (new BoletoController()).gerarRelatorioPDF(nomeBoleto, request.getRealPath("/"));
+		String boleto = (new BoletoController()).gerarRelatorioPDF(nomeBoleto, request.getRealPath("/"), (new BoletoController()).XML);
 		if (boleto != null) {
 			response.getWriter().write("<html><body><br/>Boleto Gerado com sucesso! <a href='" + boleto + "' target='_blank'>Visualizar.</a></body></html>");
 		} else {

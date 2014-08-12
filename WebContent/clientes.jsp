@@ -17,8 +17,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <title>Trabalho de Framework</title>
+    
+    <title>Clientes</title>
   </head>
 
   <body>
@@ -39,30 +39,29 @@
             <li><a href="importarXML.jsp">Importar XML</a></li>
             <li><a href="gerarBoletos.jsp">Gerar Boletos</a></li>
             <li><a href="#contact">Imprimir Boletos</a></li>
-            <li><a href="quartzServlet">Quartz</a></li>
+            <li><a href="#contact">Quartz</a></li>
             <li><a href="#contact">Service</a></li>
-            <li><a href="clientes.jsp">Clientes</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
 
     <div class="container">
-    	<div class="page-header">
-		  <h1>Trabalho de Framework</h1>
-		</div>
-		<div class="jumbotron">
-			<h2>Este trabalho apresenta as ferramentas aprendidas na matéria de frameworks</h2>
-			<p>
-				<a class="btn btn-primary btn-lg" role="button" href="captcha.jsp">Captcha</a>
-				<a class="btn btn-primary btn-lg" role="button" href="importarXML.jsp">Importar XML</a>
-				<a class="btn btn-primary btn-lg" role="button" href="gerarBoletos.jsp">Gerar Boletos</a>
-				<a class="btn btn-primary btn-lg" role="button">Imprimir Boletos</a>
-				<a class="btn btn-primary btn-lg" role="button">Quartz</a>
-				<a class="btn btn-primary btn-lg" role="button">Service</a>
-				<a class="btn btn-primary btn-lg" role="button" href="clientes.jsp">Clientes</a>
-			</p>
-		</div>
+    	<form action="clientes" method="post">
+	    	<div class="page-header">
+			  <h1>Clientes</h1>
+			</div>
+			<div class="jumbotron">
+				<div class="input-group">
+					<span class="input-group-addon">Nome do Cliente</span>
+					<input type="text" class="form-control" name="nomeCliente" placeholder="Nome Cliente" />
+				</div>
+				
+				<p>
+					<input class="btn btn-primary btn-lg" type="submit" role="button" value="Buscar"/>
+				</p>
+			</div>
+    	</form>
     </div><!-- /.container -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

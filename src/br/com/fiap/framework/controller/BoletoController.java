@@ -20,7 +20,7 @@ public class BoletoController {
 	private final String CAMINHOXPATH = "/report/data/file/cliente";
 	private final String ARQUIVODESTINOPDF = "relatorios/";
 	private final String CAMINHOJASPER= "/home/alberto/git/servlet-example/WebContent";//TODO: Alterar de acordo com o caminho do arquivo na maquina.
-	private final String XML = "<?xml version=\"1.0\" encoding=\"iso-8859-1\" ?>\n"+ 
+	public final String XML = "<?xml version=\"1.0\" encoding=\"iso-8859-1\" ?>\n"+ 
 					"<report>\n"+
 					"\n"+
 					"	<data>\n"+
@@ -80,8 +80,8 @@ public class BoletoController {
 					"\n"+
 					"</report>";
 	
-	public String gerarRelatorioPDF(String nomeRelatorio, String raizDeContexto) throws FileNotFoundException {
-		ByteArrayInputStream bais = new ByteArrayInputStream(XML.getBytes());
+	public String gerarRelatorioPDF(String nomeRelatorio, String raizDeContexto, String xml) throws FileNotFoundException {
+		ByteArrayInputStream bais = new ByteArrayInputStream(xml.getBytes());
 		JRExporter exporter = null;
 		try {
 			Map<String, Object> map = new HashMap<String, Object>();
