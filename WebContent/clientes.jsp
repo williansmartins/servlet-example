@@ -39,8 +39,9 @@
             <li><a href="importarXML.jsp">Importar XML</a></li>
             <li><a href="gerarBoletos.jsp">Gerar Boletos</a></li>
             <li><a href="#contact">Imprimir Boletos</a></li>
-            <li><a href="#contact">Quartz</a></li>
+            <li><a href="quartzServlet">Quartz</a></li>
             <li><a href="#contact">Service</a></li>
+            <li><a class="active" href="clientes.jsp">Clientes</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
