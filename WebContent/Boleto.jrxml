@@ -26,7 +26,9 @@
 	<import value="net.sf.jasperreports.engine.*" />
 	<import value="net.sf.jasperreports.engine.data.*" />
 
-	<parameter name="SUBREPORT_DIR" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["./"]]></defaultValueExpression>
+	</parameter>
 	<parameter name="deps" isForPrompting="false" class="java.lang.Object"/>
 	<parameter name="codigo" isForPrompting="false" class="java.lang.Integer"/>
 	<parameter name="nome" isForPrompting="false" class="java.lang.String"/>
@@ -352,7 +354,7 @@
 						<subreportParameterExpression><![CDATA[$P{XML_DATA_DOCUMENT}]]></subreportParameterExpression>
 					</subreportParameter>
 					<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("/report/data/file/notasfiscaisservico/nota")]]></dataSourceExpression>
-					<subreportExpression  class="java.lang.String"><![CDATA["SubReport1.jasper"]]></subreportExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR}+"/SubReport1.jasper"]]></subreportExpression>
 				</subreport>
 			</band>
 		</detail>

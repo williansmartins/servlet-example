@@ -25,7 +25,7 @@ public class Clientes extends HttpServlet {
 		StringBuilder str = new StringBuilder();
 		List<Cliente> clientes = (new ClienteController()).findClientes();
 		for (Cliente cliente : clientes) {
-			str.append("<li><a href='boleto?id=" + cliente.getId() + "'>" + cliente.getNome() + "</a></li>");
+			str.append("<li><a href='boleto?idCliente=" + cliente.getId() + "'>" + cliente.getNome() + "</a></li>");
 		}
 		
 		response.getWriter().write("<ul>" + str.toString() + "</ul>");

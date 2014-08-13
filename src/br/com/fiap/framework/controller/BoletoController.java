@@ -17,9 +17,9 @@ import net.sf.jasperreports.engine.export.JRPdfExporter;
 
 public class BoletoController {
 
-	private final String CAMINHOXPATH = "/report/data/file/cliente";
+	private final String CAMINHOXPATH = "/report/data/file";
 	private final String ARQUIVODESTINOPDF = "relatorios/";
-	private final String CAMINHOJASPER= "/home/alberto/git/servlet-example/WebContent";//TODO: Alterar de acordo com o caminho do arquivo na maquina.
+	private final String CAMINHOJASPER = "/home/alberto/git/servlet-example/WebContent";//TODO: Alterar de acordo com o caminho do arquivo na maquina.
 	public final String XML = "<?xml version=\"1.0\" encoding=\"iso-8859-1\" ?>\n"+ 
 					"<report>\n"+
 					"\n"+
@@ -86,8 +86,10 @@ public class BoletoController {
 		try {
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("dataatual", new Date());
+			map.put("SUBREPORT_DIR", raizDeContexto);
+			
 			JRXmlDataSource jrxmlds = new JRXmlDataSource(bais, CAMINHOXPATH);
-			JasperReport jasperReport = JasperCompileManager.compileReport(raizDeContexto + "/Boleto.jrxml");
+			JasperReport jasperReport = JasperCompileManager.compileReport(raizDeContexto /*CAMINHOJASPER*/ + "/Boleto.jrxml");
 			JasperPrint print = JasperFillManager.fillReport(jasperReport, map, jrxmlds);
 			exporter = new JRPdfExporter();
 			exporter.setParameter(JRExporterParameter.OUTPUT_FILE_NAME, (raizDeContexto + ARQUIVODESTINOPDF + nomeRelatorio + ".pdf"));

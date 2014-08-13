@@ -3,20 +3,20 @@ package br.com.fiap.framework.entidades;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "file")
+@XmlRootElement(namespace = "file", name = "file")
 public class Arquivo {
 
 	private Cliente cliente;
-	private NotasFiscaisServico notasFiscaisServico;
+	private NotasFiscaisServico notasfiscaisservico;
 	private Boleto	boleto;
 	
 	public Arquivo(){}
 	public Arquivo(Cliente cliente){
 		this.cliente = cliente;
 	}
-	public Arquivo(Cliente cliente, NotasFiscaisServico notasFiscaisServico){
+	public Arquivo(Cliente cliente, NotasFiscaisServico notasfiscaisservico){
 		this.cliente = cliente;
-		this.notasFiscaisServico = notasFiscaisServico;
+		this.notasfiscaisservico = notasfiscaisservico;
 	}
 
 	@XmlElement
@@ -29,15 +29,15 @@ public class Arquivo {
 	}
 
 	@XmlElement
-	public NotasFiscaisServico getNotasFiscaisServico() {
-		if(notasFiscaisServico == null){
-			this.notasFiscaisServico = new NotasFiscaisServico();
+	public NotasFiscaisServico getNotasfiscaisservico() {
+		if(notasfiscaisservico == null){
+			this.notasfiscaisservico = new NotasFiscaisServico();
 		}
-		return notasFiscaisServico;
+		return notasfiscaisservico;
 	}
 
-	public void setNotasFiscaisServico(NotasFiscaisServico notasFiscaisServico) {
-		this.notasFiscaisServico = notasFiscaisServico;
+	public void setNotasfiscaisservico(NotasFiscaisServico notasfiscaisservico) {
+		this.notasfiscaisservico = notasfiscaisservico;
 	}
 
 	public Arquivo cliente(Cliente cliente) {
@@ -50,16 +50,17 @@ public class Arquivo {
 		return this;
 	}
 
-	public Arquivo addNotaFiscalServico(NotaFiscalServico notasFiscaisServico){
-		this.getNotasFiscaisServico().addNotaFiscalServico(notasFiscaisServico);
+	public Arquivo addNotaFiscalServico(NotaFiscalServico notasfiscaisservico){
+		this.getNotasfiscaisservico().addNotaFiscalServico(notasfiscaisservico);
 		return this;
 	}
 	
-	public Arquivo comNotasFiscaisServico(NotasFiscaisServico notasFiscaisServico) {
-		this.notasFiscaisServico = notasFiscaisServico;
+	public Arquivo comNotasFiscaisServico(NotasFiscaisServico notasfiscaisservico) {
+		this.notasfiscaisservico = notasfiscaisservico;
 		return this;
 	}
 	
+	@XmlElement
 	public Boleto getBoleto() {
 		return boleto;
 	}
@@ -71,6 +72,6 @@ public class Arquivo {
 
 	@Override
 	public String toString() {
-		return "Arquivo [cliente=" + cliente.toString() + ", nfss=" + notasFiscaisServico.toString() + "]";
+		return "Arquivo [cliente=" + cliente.toString() + ", nfss=" + notasfiscaisservico.toString() + "]";
 	}
 }

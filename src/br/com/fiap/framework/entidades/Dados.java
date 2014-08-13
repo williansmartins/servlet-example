@@ -13,7 +13,7 @@ public class Dados {
 		this.arquivo = arquivo;
 	}
 
-	@XmlElement
+	@XmlElement(name = "file")
 	public Arquivo getArquivo() {
 		return arquivo;
 	}

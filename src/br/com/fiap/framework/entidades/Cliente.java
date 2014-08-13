@@ -46,7 +46,7 @@ public class Cliente implements Serializable {
 
 	@Column(name="cnpj")
 	private String cnpj;
-	
+
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(name = "TBL_CLIENTE_NOTA_FISCAL_SERVICO", joinColumns = @JoinColumn(name = "CLIENTE_ID"), inverseJoinColumns = @JoinColumn(name = "NFS_ID"))
 	private List<NotaFiscalServico> notas;

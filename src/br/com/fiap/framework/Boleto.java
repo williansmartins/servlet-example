@@ -51,13 +51,15 @@ public class Boleto extends HttpServlet {
 		Cliente c = (new ClienteController()).findById(new Long(idCliente));
 
 		try {
-			Relatorio relatorio = new Relatorio()
-			.comDados(new Dados()
-			.comArquivo(new Arquivo()
-			.comCliente(c)
-			.comBoleto(c.getBoletos().get(0))
-			.comNotasFiscaisServico(new NotasFiscaisServico()
-			.comNota(c.getNotas()))));
+			Relatorio relatorio = new Relatorio();
+			Arquivo arquivo = new Arquivo();
+			arquivo.comBoleto(c.getBoletos().get(0));
+			arquivo.comNotasFiscaisServico(new NotasFiscaisServico().comNota(c.getNotas()));
+			c.setBoletos(null);
+			c.setNotas(null);
+			arquivo.comCliente(c);
+			Dados dados = new Dados(arquivo);
+			relatorio.comDados(dados);
 			
 			String xml = (new ConversorEntidadeXML()).gerarXML(relatorio);
 			System.out.println(xml);
