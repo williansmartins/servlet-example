@@ -19,4 +19,5 @@ Gerar Boleto:
 Quando acessar a pagina de geração de boleto, bastar inserir o nome do boleto e 
 clicar em gerar, o boleto será criado no servidor da aplicação.
 
-outra besteira
+Quartz:
+Haverá um botão na home apontando para um servlet que aciona o quartz.
