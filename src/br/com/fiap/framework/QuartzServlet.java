@@ -28,6 +28,8 @@ public class QuartzServlet extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("dsgtsdgtdsgasgsdgas");
+		
 		JobDetail job = JobBuilder.newJob(MeuJob.class).withIdentity("dummyJobName", "group1").build();
 
 		// Trigger the job to run on the next round minute
@@ -52,6 +54,7 @@ public class QuartzServlet extends HttpServlet {
 		System.out.println("Quartz acionado");
 		PrintWriter out = response.getWriter();
 		out.println("quartz rodando por traz...");
+		out.println();
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
