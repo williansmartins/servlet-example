@@ -46,7 +46,6 @@ public class QuartzServlet extends HttpServlet {
 			scheduler.start();
 			scheduler.scheduleJob(job, trigger);
 		} catch (SchedulerException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

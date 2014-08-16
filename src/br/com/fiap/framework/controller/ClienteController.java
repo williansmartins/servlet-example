@@ -16,4 +16,9 @@ public class ClienteController {
 		ClienteDAO dao = new ClienteDAO();
 		return dao.findReferenceOnly(id);
 	}
+	
+	public List<Cliente> findByNome(String nome){
+		ClienteDAO dao = new ClienteDAO();
+		return dao.findByNomeLike(nome);
+	}
 }

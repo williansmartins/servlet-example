@@ -23,7 +23,7 @@ public class Clientes extends HttpServlet {
 		String nomeCliente = request.getParameter("nomeCliente");
 		
 		StringBuilder str = new StringBuilder();
-		List<Cliente> clientes = (new ClienteController()).findClientes();
+		List<Cliente> clientes = (new ClienteController()).findByNome(nomeCliente);
 		for (Cliente cliente : clientes) {
 			str.append("<li><a href='boleto?idCliente=" + cliente.getId() + "'>" + cliente.getNome() + "</a></li>");
 		}

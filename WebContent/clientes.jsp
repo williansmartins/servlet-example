@@ -55,7 +55,7 @@
 			<div class="jumbotron">
 				<div class="input-group">
 					<span class="input-group-addon">Nome do Cliente</span>
-					<input type="text" class="form-control" name="nomeCliente" placeholder="Nome Cliente" />
+					<input type="text" class="form-control" name="nomeCliente" id="nomeCliente" placeholder="Nome Cliente" />
 				</div>
 				<br />
 				<p>
@@ -66,25 +66,22 @@
     	<div class="panel panel-default">
 		  <div class="panel-heading">Resultados da busca</div>
 		  <div class="panel-body" id="result">
-		    
 		  </div>
 		</div>
-
     </div><!-- /.container -->
 
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
     	$(function() {
-    		$( ".buscar" ).click(function() {
+    		$(".buscar").click(function() {
+    			var nome = $("#nomeCliente").val();
    			 	$.ajax({
-   			   	  url: "clientes?nomeCliente=willians",
+   			   	  url: ("clientes?nomeCliente=" + nome),
    			   	}).done(function( result ) {
    			   	  $("#result").html(result);
    			   	});
     		});
-    		
-    		
     	});    
     </script>
   </body>
